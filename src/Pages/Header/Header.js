@@ -24,7 +24,10 @@ const Header = () => {
                             }
                         </Nav>
                         <Navbar.Text>
-                            <img className="user_img" title={user.displayName} src={user.photoURL} alt="" />
+                            <img className="user_img me-3" title={user.displayName} src={user.photoURL} alt="" />
+                        </Navbar.Text>
+                        <Navbar.Text>
+                            <span>{user.displayName}</span>
                         </Navbar.Text>
                         {
                             user.email ?
