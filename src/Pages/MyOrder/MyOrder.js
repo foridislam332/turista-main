@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import './MyOrder.css';
 
-const MyOrder = (props) => {
-    const { packageName, packagePrice, packageImg } = props.user;
+const MyOrder = ({ order }) => {
+    const { packageName, packagePrice, packageImg } = order;
 
     return (
         <div>

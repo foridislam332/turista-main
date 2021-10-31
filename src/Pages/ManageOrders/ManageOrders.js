@@ -1,21 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './ManageOrders.css';
 
 const ManageOrders = () => {
+    const { user } = useAuth();
     const [users, setUsers] = useState([]);
+    const [orders, setOrders] = useState([]);
+    const email = user.email;
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://macabre-nightmare-74197.herokuapp.com/users')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
 
+    // find data by email
+    useEffect(() => {
+        if (users.length) {
+            const orderDetails = users.filter(user => user.userEmail == email);
+            setOrders(orderDetails)
+        }
+    }, [users])
+
+
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, You want to Remove this package?')
         if (proceed) {
-            const url = `http://localhost:5000/users/${id}`;
+            const url = `https://macabre-nightmare-74197.herokuapp.com/users/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })
@@ -24,12 +37,13 @@ const ManageOrders = () => {
                     if (data.deletedCount > 0) {
                         alert('Package Remove Successfully')
                         const remainingUser = users.filter(user => user._id !== id)
-                        setUsers(remainingUser)
+                        setOrders(remainingUser)
                     }
                 })
         }
 
     }
+
     return (
         <div>
             <div className="container mb-5">
@@ -37,21 +51,20 @@ const ManageOrders = () => {
                 <div className="row">
                     <div className="col-lg-8">
                         {
-                            users.map(user => (
+                            orders.map(userMail => (
                                 <div
-                                    key={user._id}
+                                    key={userMail._id}
                                 >
                                     <div className="my_order manage_my_order w-100">
                                         <div className="order_img">
-                                            <img src={user.packageImg} alt="" />
+                                            <img src={userMail.packageImg} alt="" />
                                         </div>
                                         <div className="order_content">
-                                            <h4>{user.packageName}</h4>
-                                            <h5>Price: ${user.packagePrice}</h5>
+                                            <h4>{userMail.packageName}</h4>
+                                            <h5>Price: ${userMail.packagePrice}</h5>
                                         </div>
                                         <div className="handle_btn">
-                                            <Button className="btn_regular">Update</Button>
-                                            <Button onClick={() => handleDeleteUser(user._id)} className="btn_regular">Remove</Button>
+                                            <Button onClick={() => handleDeleteUser(userMail._id)} className="btn_regular">Remove</Button>
                                         </div>
                                     </div>
                                 </div>
@@ -60,7 +73,7 @@ const ManageOrders = () => {
                     </div>
                     <div className="col-lg-4">
                         <div className="my_order_area">
-                            <h1>Total Orders :{users.length}</h1>
+                            <h1>Total Orders :{orders.length}</h1>
                             <Link to="/myorder"><Button className="btn_regular mt-3">My Orders</Button></Link>
                         </div>
                     </div>

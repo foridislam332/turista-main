@@ -6,7 +6,7 @@ import './AddNewPackage.css';
 const AddNewPackage = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/all-package', data)
+        axios.post('https://macabre-nightmare-74197.herokuapp.com/all-package', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Success to added new package')
