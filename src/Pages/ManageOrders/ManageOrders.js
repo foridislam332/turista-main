@@ -36,7 +36,7 @@ const ManageOrders = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('Package Remove Successfully')
-                        const remainingUser = users.filter(user => user._id !== id)
+                        const remainingUser = orders.filter(user => user._id != id)
                         setOrders(remainingUser)
                     }
                 })
