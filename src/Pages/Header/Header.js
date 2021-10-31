@@ -16,8 +16,12 @@ const Header = () => {
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/all-package">All-Packages</Nav.Link>
-                            <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-                            <Nav.Link as={Link} to="/contact">Contact Us</Nav.Link>
+                            {
+                                user.email ? <Nav.Link as={Link} to="/add-paclage">Add New Package</Nav.Link> : ""
+                            }
+                            {
+                                user.email ? <Nav.Link as={Link} to="/myorder">My Orders</Nav.Link> : ""
+                            }
                         </Nav>
                         <Navbar.Text>
                             <img className="user_img" title={user.displayName} src={user.photoURL} alt="" />

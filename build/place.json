@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Glacier Walk Combo",
+        "price": 2500,
+        "description": "When you book this combo glacier tour, you start with the 09.00 o’clock Glacier Walk, after the glacier walk you have around an hour to get to the next tour",
+        "img": "https://i.ibb.co/TTsXrpH/popular-2.jpg"
+    },
+    {
+        "name": "The Splendor Of Manali",
+        "price": 2010,
+        "description": "Referred to as the Queen of Himachal Pradesh, Manali is an ancient town that is located at an altitude of nearly 2050 meters in Kullu district.",
+        "img": "https://i.ibb.co/7jTWN9Y/popular-1.jpg"
+    },
+    {
+        "name": "Great Britain Travel",
+        "price": 1900,
+        "description": "Your passport or identity card will be checked when you arrive at a UK port or airport to make sure you're allowed to come into the country.",
+        "img": "https://i.ibb.co/qrgYCrB/popular-3.jpg"
+    },
+    {
+        "name": "Beauty Of Tajmahal",
+        "price": 1100,
+        "description": "The Taj Mahal is widely considered one of the most beautiful buildings ever created. The exquisite marble structure in Agra, India, is a mausoleum",
+        "img": "https://i.ibb.co/jgCW54P/popular-4.jpg"
+    },
+    {
+        "name": "Venice Tour - Italy",
+        "price": 1700,
+        "description": "Our full range of Venice tours, gondola rides, boat tours, walking tours & special access St. Mark's Basilica tours; with small groups & expert guides.",
+        "img": "https://i.ibb.co/WDZjXZf/popular-5.jpg"
+    },
+    {
+        "name": "Super Maldives Trip",
+        "price": 1500,
+        "description": "Maldives Luxury Packages - Get discount on Luxury packages for Maldives Tours & Travel packages at MakeMyTrip. We offer customized Maldives Tour",
+        "img": "https://i.ibb.co/9YTh8Yy/popular-6.jpg"
+    }
+]

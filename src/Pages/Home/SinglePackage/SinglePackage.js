@@ -10,7 +10,7 @@ const SinglePackage = (props) => {
 
     const { _id, name, img, description } = props.package;
 
-    const url = `/package/${_id}`
+    const url = `/order/${_id}`
     return (
         <div className="col-lg-4">
             <Card className="package_card">
